@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 2.8)
+project( testMiniProjet2 )
+find_package( OpenCV REQUIRED )
+add_executable( extract_coord extract_coord.cpp )
+target_link_libraries( extract_coord ${OpenCV_LIBS} )
