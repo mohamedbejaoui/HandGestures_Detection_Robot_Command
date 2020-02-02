@@ -1,4 +1,6 @@
 # Hand Gestures detection
+This is an academic mini-project I did with [**Obeid Jad Abdul Rahman**](https://gitlab-student.centralesupelec.fr/obeid_jad).<br>
+
 The purpose of this project is to perform hand gestures detection based on Deep Learning using pytorch. Two types of neural networks are used , the Feed-Forward Neural Netwroks and the Convolutional Neural Networks.
 
 ## FNN Based detection
@@ -35,32 +37,32 @@ To do so you need to use the script ``` extract_feat_aut.py```.
 ```bash
 $python3 extract_feat_aut.py <contour1> <contour2> ...
 ```
-The outputs here are csv files with same name as the input file with _feat at the end, with the following format : 
+The outputs here are csv files with same name as the input file with _feat at the end, with the following format :
 
 <-feature1->,<-feature2->...<-feature21-> \
 <-feature1->,<-feature2->...<-feature21->
 
 
 ### Dataset Preparation
-Once features are extracted now we need to prepare a dataset from these features. The script responsible of doing this is ``` extract_feat_aut.py``` .It is used the following way : 
+Once features are extracted now we need to prepare a dataset from these features. The script responsible of doing this is ``` extract_feat_aut.py``` .It is used the following way :
 ```bash
 $python3 agg_data_aut.py <features1_csv> <label1> <features2_csv> <label2> .....
 ```
 At the end, we will have our dataset in the file ``` all_data.csv ``` ready to use for training.
 
-This file has the following format : 
+This file has the following format :
 
 <-label->,<-feature1->,<-feature2->...<-feature21->
 
 ### Trainning Classifier
-The next step after extracting the data, is to train the classifier with is the FNN here. 
+The next step after extracting the data, is to train the classifier with is the FNN here.
 ```bash
 $python3 train.py --classes <nbclasses>
 ```
 where <-nbclasses-> is the number of classes for classification
 ### Testing Classifier
 To test this classifier 2 options are available, either to test it using the camera or using a video file .
-To check how to use the test scipt : 
+To check how to use the test scipt :
 ```bash
 $python3 test.py -h
 ```
